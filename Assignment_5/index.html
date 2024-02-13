@@ -109,7 +109,25 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#login" class="appointment-btn scrollto"><span class="d-none d-md-inline">Login </span></a>
+      <a href="#" class="appointment-btn scrollto" onclick="redirectToPage('join-now.html')">
+        <span class="d-none d-md-inline"></span> Join Now
+      </a>
+      
+      <a href="#" class="appointment-btn scrollto" onclick="redirectToPage('login.html')">
+        <span class="d-none d-md-inline"></span> Sign in
+      </a>
+
+      <script>
+        // Function to redirect to the appropriate page based on button text
+        function redirectToPage(page) {
+          // Check the page parameter to determine the destination
+          if (page.includes("join-now")) {
+            window.location.href = 'join-now.html'; // Redirect to Join Now page
+          } else if (page.includes("login")) {
+            window.location.href = 'login.html'; // Redirect to Sign In page
+          }
+        }
+      </script>
      
 
     </div>

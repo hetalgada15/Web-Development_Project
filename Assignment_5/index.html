@@ -618,7 +618,28 @@
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
 
-                <div class="text-center" data-toggle="modal" data-target="#exampleModal"><button type="submit">Send Message</button></div>
+              <div class="text-center" data-toggle="modal" data-target="#exampleModal">
+                <button type="submit" onclick="sendMessage()">Send Message</button>
+              </div>
+              
+              <script>
+                function sendMessage() {
+                  // Check if the form fields are filled
+                  var name = document.getElementById('name').value;
+                  var email = document.getElementById('email').value;
+                  var subject = document.getElementById('subject').value;
+                  var message = document.getElementsByName('message')[0].value;
+            
+                  if (name && email && subject && message) {
+                    // Close the Bootstrap modal
+                    $('#exampleModal').modal('hide');
+                    // Show the alert
+                    alert('Message is saved successfully');
+                  } else {
+                    alert('Please fill in all the required fields');
+                  }
+                }
+              </script>
                 
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
